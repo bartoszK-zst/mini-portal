@@ -1,9 +1,34 @@
 import { useState } from "react";
 
-export default function Portal(){
-  [darkMode, setDarkMode] = useState(1);
+export default function Portal({books = []}){
+  const [darkMode, setDarkMode] = useState(false);
 
   function ToggleBgColor(){
-    
+    if(darkMode){
+      setDarkMode(false);
+    }
+    else{
+      setDarkMode(true);
+    }
   }
+
+  return(
+    <div className={(darkMode ? 'bg-dark text-light' : 'bg-light text-dark') + ' container-800'}>
+      <div className='.container-fluid bg-primary text-light'>
+        Portal o książkach
+      </div>
+      <div>
+        <div className="position-absolute bottom-0 end-0 p-3">
+          <button className={
+            "p-2 rounded-pill border border-2 " +
+            (darkMode ? "border-light bg-dark" : "border-dark bg-light")
+          }
+            onClick={() => ToggleBgColor()}>
+              {darkMode ? '☀️' : '🌑'}
+            </button>
+        </div>
+        xxx
+      </div>
+    </div>
+  )
 }

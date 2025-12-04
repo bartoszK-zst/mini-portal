@@ -5,11 +5,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Portal from './components/Portal';
+
+const books = [
+  "Tomek w krainie kangurów",
+  "Czerwonoskóry generał",
+  "Władca pierścieni drużyna pierścienia",
+  "Pan Tadeusz",
+  "Dżuma"
+]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Portal />
   </React.StrictMode>
 );
 
