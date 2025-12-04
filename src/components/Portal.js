@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Card from "./Card";
 
 export default function Portal({books = []}){
   const [darkMode, setDarkMode] = useState(false);
@@ -12,8 +13,10 @@ export default function Portal({books = []}){
     }
   }
 
+  console.log(books);
+
   return(
-    <div className={(darkMode ? 'bg-dark text-light' : 'bg-light text-dark') + ' container-800'}>
+    <div className={(darkMode ? 'bg-dark text-light' : 'bg-light text-dark') + ' container-100 h-100'}>
       <div className='.container-fluid bg-primary text-light'>
         Portal o książkach
       </div>
@@ -27,7 +30,13 @@ export default function Portal({books = []}){
               {darkMode ? '☀️' : '🌑'}
             </button>
         </div>
-        xxx
+        <ul className="list-group h-100">
+          {books.map((book) => 
+            <li className="list-group-item">
+              <Card book={book}/>
+            </li>
+          )}
+        </ul>
       </div>
     </div>
   )

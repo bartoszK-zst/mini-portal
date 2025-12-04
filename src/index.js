@@ -8,17 +8,19 @@ import reportWebVitals from './reportWebVitals';
 import Portal from './components/Portal';
 
 const books = [
-  "Tomek w krainie kangurów",
-  "Czerwonoskóry generał",
-  "Władca pierścieni drużyna pierścienia",
-  "Pan Tadeusz",
-  "Dżuma"
+  {title: "Tomek w krainie kangurów", description: "xxxxx"},
+  {title: "Czerwonoskóry generał", description: "xxxxx"},
+  {title: "Władca pierścieni drużyna pierścienia", description: "xxxxx"},
+  {title: "Pan Tadeusz", description: "xxxxx"},
+  {title: "Dżuma", description: "xxxxx"}
 ]
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Portal />
+    <Portal books={books}/>
   </React.StrictMode>
 );
 
